@@ -1,26 +1,44 @@
 import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
-import {Icon,Seperator} from 'react-native-elements';
+import {Icon,Divider} from 'react-native-elements';
 
-const WeatherCell = (item) => {
+const WeatherCell = (weather) => {
     return (
         <View style={styles.containerStyle}>
-            <Icon/>
-            <Text style={styles.labelTemperature}>Temerature</Text>
-            <Text style={styles.labelDescriptionStyle}>Description</Text>
-            <Text style={styles.labelDateStyle}>Date</Text>
+            <Icon name='rowing' style={styles.imageIconStyle} />
+        <Text style={styles.labelTemperature}>Temerature: {weather.item.main.temp}</Text>
+    <Text style={styles.labelDateStyle}>Date: {weather.item.dt_txt}</Text>
         </View>
     );
 };
 
 const styles = StyleSheet.create({
 containerStyle: {
-    flex: 1
+    flex: 1,
+    backgroundColor: '#AAAAAA',
+    justifyContent: 'flex-start',
+    margin: 10,
+    borderWidth: 2,
+    borderColor: 'grey'
 },
-labelTemperature: {},
-imageIconStyle: {},
-labelDateStyle: {},
-labelDescriptionStyle: {}
+labelTemperature: {
+    height: 30
+},
+imageIconStyle: {
+    alignSelf: 'flex-end',
+    height: 50,
+    width: 50,
+    top: 10,
+    left: 15,
+    alignSelf: 'flex-end'
+},
+labelDateStyle: {
+    height: 30,
+},
+labelDescriptionStyle: {
+    height: 30,
+    textAlignVertical: 'center'
+}
 });
 
 export default WeatherCell;
