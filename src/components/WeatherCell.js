@@ -1,11 +1,9 @@
 import React from 'react';
 import { View, StyleSheet, Image, Text } from 'react-native';
-import {Icon,Divider} from 'react-native-elements';
 
 const WeatherCell = (weather) => {
     return (
         <View style={styles.containerStyle}>
-            <Icon name='rowing' style={styles.imageIconStyle} />
         <Text style={styles.labelTemperature}>Temerature: {weather.item.main.temp}</Text>
     <Text style={styles.labelDateStyle}>Date: {weather.item.dt_txt}</Text>
         </View>
